@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lubi | HOME</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles/style1.css">
+  <script src="js/script1.js"></script>
 </head>
 <body>
+
     <!-- MOBILE SCREEN -->
     <input type="checkbox" id="menu">
     <!-- END MOBILE SCREEN -->
-
+ 
     <header>
         <div class="logo">
-            <h1>LU<span>BI</span></h1>            
+            <h1>BOOSTER-<span>KEY</span></h1>            
         </div>
         <!-- MOBILE SCREEN -->
         <label for="menu">
@@ -25,16 +26,40 @@
         </label>
         <!-- END MOBILE SCREEN -->
         <nav>
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
+            <a href="#home" class="active">HOME</a>
+            <a href="#about">INFO</a>
+            <a href="#services">PRODOTTI</a>
+            <a href="#contact" class="red">CONTATTI</a>
         </nav>
     </header>
 
+    <div class="enter-animation" id="enter-animation">
+        <img src="sources/pc_home.png" class="pc_home" id="pc_home">        
+        <img src="sources/pendrive_home.png" class="pendrive_home" id="pendrive_home">
+        <h1 id="title_home">LA MIGLIOR <span class="marker">CHIAVETTA</span> PER <span class="marker">VELOCIZZARE</span> IL TUO <span class="marker">PC</span></h1>
+    </div>
 
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="script.js"></script>
+    <div class="info" id="info">
+        <div class="btn-shop" id="info-shop">
+            <h1>QUICK INFO</h1>
+        </div>
+    </div>
 
+    <footer>
+        <div class="footer-content">
+            <div class="logo-details">
+                <h1 class="logo_name">Booster-Key</h1>
+            </div>
+            <div class="link-boxes">
+                <ul class="box">
+                    <li class="link-name"><a href="#">Link 1</a></li>
+                    <li class="link-name"><a href="#">Link 2</a></li>
+                    <li class="link-name"><a href="#">Link 3</a></li>
+                    <li class="link-name"><a href="#">Link 4</a></li>
+                    <li class="link-name"><a href="#">Link 5</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
