@@ -5,7 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
-    /*border: 1px solid green;*/
+    border: 1px solid green;
 }
 
 body{
@@ -24,8 +24,8 @@ header{
     width: 100%;
     box-shadow: 0px 0px 20px rgba(0,0,0,0.01);
     z-index: 100;
-
 }
+
 .logo{
     display: flex;
     gap: 15px;
@@ -185,35 +185,6 @@ input {
     animation: oscillate .5s;
 }
 
-@keyframes oscillate {
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-    }
-    25% {
-        transform: translate(-50%, -50%) rotate(7deg) scale(1.2); 
-    }
-    50% {
-        transform: translate(-50%, -50%) rotate(-7deg) scale(1.2); 
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(1);
-    }
-}
-
-@keyframes bigButton{
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-    }
-    25% {
-        transform: translate(-50%, -50%) rotate(7deg) scale(1.7); 
-    }
-    50% {
-        transform: translate(-50%, -50%) rotate(-7deg) scale(1.7); 
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(1);
-    }
-}
   
 .infoshop-oscillate {
     animation: bigButton .5s ease-in-out .5s ;
@@ -278,14 +249,21 @@ footer {
     font-size: 16px;
 }
 
+/*--------------------------  MEDIA QUERY   --------------------------------*/
+
 @media (max-width: 768px) {
     body{
         overflow-x: hidden;
-    }
+    }  
 
     header{
         box-shadow: 0 0 0;
     }
+
+    .logo h1{
+        font-size: 15px;
+    }
+
     nav{
         position: absolute;
         top: 100px;
@@ -298,6 +276,7 @@ footer {
         transition: .5s;
         overflow: hidden;
     }
+
     nav a:nth-child(1){
         margin-top: 20px;
     }
@@ -347,35 +326,44 @@ footer {
         top: 50%;
     }
 
+    .enter-animation{
+        padding-top: 100px;
+        height: 80vh;
+    }
+    
+
     .pc_home{
-        height: 300px;
+        height: 200px; /* Altezza ridotta */
         width: auto;
         position: absolute;
-        top: 55%;
-        left: 10%;
-        transform: translate(-70%, -50%);
+        top: 50%; /* Modifica la posizione verticale */
+        left: 5%; /* Modifica la posizione orizzontale */
+        transform: translate(-50%, -50%); /* Rimani centrato rispetto al genitore */
         z-index: 2;
     }
 
     .pendrive_home{
-        height: 100px;
+        height: 70px; /* Altezza ridotta */
         width: auto;
         position: absolute;
-        top: 65%;
-        right: -5%;
-        transform: translate(30%, -50%);
+        top: 50%; /* Modifica la posizione verticale */
+        left: 25%; /* Modifica la posizione orizzontale */
+        transform: translate(-50%, -50%); /* Rimani centrato rispetto al genitore */
         z-index: 1;
     }
 
     .enter-animation h1{
         color: white;
         position: relative;
-        top: 20%;
-        left: 30%;
+        top: 5%;
+        left: 50%;
+        transform: translate(-50%);
         width: 100%;
-        font-size: 30px;
+        max-width: 80%;
+        font-size: 25px;
+        text-align: center;
         transition: transform 0.5s ease;
-        line-height: normal;
+        line-height: 50px;
     }
     
     .enter-animation .marker{
@@ -383,4 +371,66 @@ footer {
         padding: 5px;
         border-radius: 5px;
     }
+
+    .info {
+        color: white;
+        background-image: url(/sources/bg_info2.png);
+        background-repeat: no-repeat;
+        background-size: cover; 
+        background-position: center;
+        height: 50vh; /* Riduci l'altezza */
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        position: relative; 
+        overflow: hidden; 
+    }
+    
+    .info .btn-shop {
+        position: absolute;
+        top: 45%; /* Modifica la posizione verticale */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        background: #007AFF;
+        padding: 20px;
+        border-radius: 999px;
+        transition: box-shadow .5s;
+        box-shadow: 0px 20px 10px rgba(0,0,0,0.5);
+        font-size: 10px;
+    }
 }
+
+/*---------------------------  KEYFRAMES  ----------------------------------*/
+
+
+@keyframes oscillate {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    25% {
+        transform: translate(-50%, -50%) rotate(7deg) scale(1.2); 
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(-7deg) scale(1.2); 
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes bigButton{
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    25% {
+        transform: translate(-50%, -50%) rotate(7deg) scale(1.7); 
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(-7deg) scale(1.7); 
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+  
