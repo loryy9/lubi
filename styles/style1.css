@@ -9,6 +9,7 @@
     --colore-blu1: #007AFF;
     --colore-blu2: #312ECB;
     --colore-footer: #333;
+    --colore-white: rgba(250,250,250, 0.6);
 }
 
 * {
@@ -162,12 +163,11 @@ input {
 
 .title-home-scroll{
     transform: translate(100vw, -10%) rotate(45deg);
-
 }
 
 .info {
     color: white;
-    background-image: url(/sources/bg_info2.png);
+    background: url(/sources/bg_info2.png);
     background-repeat: no-repeat;
     background-size: cover; 
     background-position: center;
@@ -203,10 +203,10 @@ input {
 
 .action-passages{
     padding: 50px;
-    color: var(--colore-blu1);
+    color: var(--colore-white);
     text-align: center;
     font-size: 25px;
-    background: silver;
+    background: rgba(250,250,250,0.1);;
     margin: 100px;
     border-radius: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -217,12 +217,14 @@ input {
     width: auto;
     border-radius: 20px;
     opacity: 0;
-    transition: opacity 1s ease-in;
+    scale: .8;
+    transition: all .8s linear;
     box-shadow: var(--ombra-1);
 }
 
-.card-container.in-view .card-action{
+.card-container .card-action.in-view {
     opacity: 1;
+    scale: 1;
 }
 
 .card-container {
@@ -238,9 +240,8 @@ input {
 footer {
     background: var(--colore-footer);
     color: #fff;
-    padding: 20px 0;
-    height: 20vh;
-    display: flex;
+    padding: 50px 20px;
+    height: fit-content;
     align-items: center;
     border-top: 2px solid white;
 }
@@ -249,8 +250,6 @@ footer {
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -258,36 +257,78 @@ footer {
 .logo-details {
     display: flex;
     align-items: center;
-}
-
-.logo-details i {
-    font-size: 24px;
-    margin-right: 10px;
+    margin-bottom: 20px;
+    
 }
 
 .logo-details .logo_name {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 30px;
+    width: 50vh;
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+}
+
+.logo-details .btn-back-top{
+    height: 40px;
+    width: auto;
+    position: absolute;
+    transform: translateX(40vh);
+    margin-bottom: 15px;
+
 }
 
 .link-boxes {
     display: flex;
-    justify-content: center;
+    gap: 100px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .box {
     list-style: none;
-    display: flex;
 }
 
-.link-name {
-    margin-right: 20px;
+.link-name:nth-child(2) {
+    margin-top: 10px;
+
+}
+
+.link-name:nth-child(1){
+    margin-top: 5px;
 }
 
 .link-name a {
     color: #fff;
     text-decoration: none;
     font-size: 16px;
+}
+
+.box_social{
+    list-style: none;
+    display: flex;
+    gap: 10px;
+
+}
+.box_social .logo_social{
+    height: 30px;
+    width: auto;
+}
+
+.mappa{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.link-mappa a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.termini-condizioni {
+    text-decoration: none;
+    color: #fff;
 }
 
 /*--------------------------  MEDIA QUERY   --------------------------------*/
@@ -432,10 +473,7 @@ footer {
 
     .info {
         color: white;
-        background-image: url(/sources/bg_info2.png);
-        background-repeat: no-repeat;
-        background-size: cover; 
-        background-position: center;
+        background-attachment: scroll;
         height: 50vh; 
         display: flex;
         justify-content: center; 
@@ -460,7 +498,7 @@ footer {
 
     .action-passages{
         margin: 30px;
-        font-size: 15px;
+        font-size: 12px;
     }
 
     .card-container{
@@ -470,6 +508,23 @@ footer {
     .card-container .card-action{
         height: 30vh;
         width: auto;
+    }
+
+    footer{
+        padding: 20px;
+        height: fit-content;
+        margin-top: 100px;
+    }
+
+    .link-boxes{
+        display: grid;
+        gap: 20px;
+        margin-left: 10px;
+        margin-bottom: 20px;
+    }
+
+    .box{
+        margin-top: 10px;
     }
 
 }
