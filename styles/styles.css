@@ -1,0 +1,232 @@
+:root{
+    --azzurro-scuro: #007dc5;
+    --azzurro-chiaro: #8284b5;
+    --text-gradient: linear-gradient(to right, #34ACF1, #C1C4FF);
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(217, 217, 216);
+    overflow-x: hidden; 
+}
+
+.navbar {
+    position: fixed;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: border-radius 1s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+}
+
+.navbar.menu-open {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: none;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo img {
+    width: 40px;
+    height: auto;
+    border-radius: 99px;
+}
+
+.menu-links {
+    display: flex;
+    gap: 20px;
+}
+
+.menu-links a {
+    color: var(--azzurro-scuro); 
+    text-decoration: none;
+    padding: 8px 16px;
+    transition: background 0.3s;
+}
+
+.menu-links a:hover {
+    border-radius: 4px;
+    background-color: var(--azzurro-chiaro); 
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #2b2929;
+    margin: 4px 0;
+    transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+#menu-toggle:checked + .hamburger .bar:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+}
+
+#menu-toggle:checked + .hamburger .bar:nth-child(2) {
+    opacity: 0;
+}
+
+#menu-toggle:checked + .hamburger .bar:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 40%;
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.author{
+    font-size: 20px;
+}
+
+
+.big-title {
+    font-size: 50px;
+    text-align: center;
+}
+
+.big-title h1 {
+    margin: 0;
+    background-image: linear-gradient(300deg, rgb(110, 162, 252) 0%, rgb(1, 95, 223) 100%);
+    -webkit-background-clip: text; 
+    background-clip: text;
+    color: transparent;
+}
+
+.slogan {
+    color: rgb(71, 66, 66); 
+    text-align: center;
+    margin-top: 20px;
+}
+
+.line{
+    margin-top: 20px;
+    width: 50%;
+    height: 1px;
+    background: rgb(71, 66, 66);
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social1, .social2, .social3, .social4{
+    margin: 0 10px; 
+    height: min-content;
+    width: min-content;
+    padding: 0;
+}
+
+.social1 img, .social2 img, .social3 img, .social4 img{
+    height: 40px;
+}
+
+.social1 img:hover, .social2 img:hover, .social3 img:hover, .social4 img:hover{
+    filter: drop-shadow(0px 4px 4px #8284b5);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        width: 60%;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .menu-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        width: 100%;
+        color: var(--azzurro-scuro); 
+        text-align: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.8s ease-in-out, opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        opacity: 0;
+        transform: translateY(-20px);
+        background-color: #ffffff;
+    }
+
+    #menu-toggle:checked ~ .menu-links {
+        max-height: 100vh; 
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .hero-section{
+        top: 10px;
+        width: 70%;
+    }
+
+    .author{
+        font-size: 15px;
+    }
+
+    .big-title {
+        font-size: 25px;
+        text-align: center;
+    }
+    
+    .big-title h1 {
+        margin: 0;
+        background-image: linear-gradient(300deg, rgb(110, 162, 252) 0%, rgb(1, 95, 223) 100%);
+        -webkit-background-clip: text; 
+        background-clip: text;
+        color: transparent;
+    }
+    .slogan {
+        color: rgb(71, 66, 66); 
+        text-align: center;
+        margin-top: 20px;
+        font-size: 15px;
+        width: 100%;
+    }
+
+    .line{
+        width: 70%;
+    }
+    .social1 img, .social2 img, .social3 img, .social4 img{
+        height: 25px;
+    }
+}
+
+

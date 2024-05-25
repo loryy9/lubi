@@ -1,89 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link rel="stylesheet" href="styles/style1.css">
-  <script src="js/script1.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/menu.js"></script>
 </head>
 <body>
-
-    <!-- MOBILE SCREEN -->
-    <input type="checkbox" id="menu">
-    <!-- END MOBILE SCREEN -->
- 
-    <header>
-        <div class="logo">
-            <h1>BOOSTER-<span>KEY</span></h1>            
-        </div>
-        <!-- MOBILE SCREEN -->
-        <label for="menu">
-            <div></div>
-            <div></div>
-            <div></div>
+    <nav class="navbar">
+        <div class="logo"><img src="sources/logo2.png" alt="Logo"></div>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
         </label>
-        <!-- END MOBILE SCREEN -->
-        <nav>
-            <a href="index.html" class="active">HOME</a>
-            <a href="#about">INFO</a>
-            <a href="product.html">PRODOTTI</a>
-            <a href="#contact" class="red">CONTATTI</a>
-        </nav>
-    </header>
-
-    <div class="enter-animation" id="enter-animation">
-        <img src="sources/pc_home.png" class="pc_home" id="pc_home">        
-        <img src="sources/pendrive_home.png" class="pendrive_home" id="pendrive_home">
-        <h1 id="title_home">LA MIGLIOR <span class="marker">CHIAVETTA</span> PER <span class="marker">VELOCIZZARE</span> IL TUO <span class="marker">PC</span></h1>
-    </div>
-
-    <div class="info" id="info">
-        <div class="btn-shop" id="info-shop">
-            <h1>QUICK INFO</h1>
-        </div>
-    </div>
-
- 
-    <div class="action-passages">
-        <h1>Velocizza il tuo computer in poche e semplici azioni!</h1>
-        <div class="card-container">
-            <img src="sources/card_actions/1.png" class="card-action card1">
-        <img src="sources/card_actions/2.png" class="card-action card2">
-        <img src="sources/card_actions/3.png" class="card-action card3">
-        <img src="sources/card_actions/4.png" class="card-action card4">
-        <img src="sources/card_actions/5.png" class="card-action card5">
-        </div>        
-    </div>
- 
-
-    <footer>
-        <div class="footer-content">
-            <div class="logo-details">
-                <h1 class="logo_name">Booster-Key</h1>
-                <img src="sources/back-top.png" class="btn-back-top" onclick="topFunction()">
-            </div>
-            <div class="link-boxes">
-                <ul class="box">
-                    <li class="link-name"><a href="#">email: supportotecico@gmail.com</a></li>
-                    <li class="link-name"><a href="#">tel: 333-444-5555</a></li>
-                </ul>
-                <ul class="box_social">
-                    <li class="li_social"><img src="sources/loghi_social/instagram.png" class="logo_social"></li>
-                    <li class="li_social"><img src="sources/loghi_social/tik-tok.png" class="logo_social"></li>
-                </ul>
-                <ul class="mappa">
-                    <li class="link-mappa"><a href="#">HOME</a></li>
-                    <li class="link-mappa"><a href="#">PRODOTTI</a></li>
-                    <li class="link-mappa"><a href="#">INFO</a></li>
-                    <li class="link-mappa"><a href="#">CONTATTI</a></li>
-                </ul>
-                <ul class="termini">
-                    <a href="#" class="termini-condizioni">Termini e Condizioni</a>
-                </ul>
+        <div class="menu-links">
+            <a href="#home">Home</a>
+            <a href="#about">Prgetti</a>
+            <a href="#services">Chi Sono</a>
+            <a href="#contact">Curriculum</a>
+            <a href="#contact">Contattami</a>
+        </div>    
+    </nav>
+    <main>
+        <div class="content">
+            <div class="hero-section">
+                <div class="author">
+                    <h3>Lorenzo Bellotti</h3>
+                </div>
+                <div class="big-title">
+                    <h1>Sviluppatore e Designer</h1>
+                </div>
+                <div class="slogan">
+                    Fondendo creatività e abilità tecniche, trasformo le tue visioni in realtà, con un tocco di innovazione e un pizzico di stile!
+                </div>
+                <div class="line"></div>
+                <div class="social">
+                    <div class="social1"><img src="sources/loghi_social/ig_dark.png" alt="null"></div>
+                    <div class="social2"><img src="sources/loghi_social/git_dark.png" alt="null"></div>
+                    <div class="social3"><img src="sources/loghi_social/linkedin_dark.png" alt="null"></div>
+                    <div class="social4"><img src="sources/loghi_social/mail_dark.png" alt="null"></div>
+                </div>
             </div>
         </div>
-    </footer>
+    </main>
+
 </body>
 </html>
