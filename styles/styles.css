@@ -4,10 +4,14 @@
     --text-gradient: linear-gradient(to right, #34ACF1, #C1C4FF);
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: rgb(217, 217, 216);
+    background-color: rgb(231, 228, 228);
     overflow-x: hidden; 
 }
 
@@ -26,7 +30,6 @@ body {
     align-items: center;
     padding: 10px 20px;
     background-color: #ffffff;
-    opacity: .9;
 }
 
 .navbar.menu-open {
@@ -50,7 +53,7 @@ body {
 
 .menu-links {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     opacity: 1;
 }
 
@@ -59,11 +62,25 @@ body {
     text-decoration: none;
     padding: 8px 16px;
     transition: background 0.3s;
+    font-weight: 600;
+    font-size: 20px;
+    transition: color .3s ease-in-out;
 }
 
-.menu-links a:hover {
-    border-radius: 4px;
-    background-color: var(--azzurro-chiaro); 
+.menu-links a:hover{
+    color: #084c73;
+}
+
+.contact{
+    background: #007dc5;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+    transition: background-color .3s ease-in-out;
+}
+
+.contact:hover{
+    background: #084c73;
 }
 
 .hamburger {
@@ -213,7 +230,7 @@ body {
 .card-content a {
     display: block;
     text-decoration: none;
-    color: #007dc5; /* Colore del collegamento */
+    color: #007dc5; 
 }
 
 .chi-sono{
@@ -223,6 +240,7 @@ body {
     transform: translateX(-50%);
     background: white;
     height: min-content;
+    padding-bottom: 200px;
 }
 
 .chi-sono-content{
@@ -253,23 +271,139 @@ body {
     display: flex;
     align-items: center;
     margin: 10px;
-    width: auto; /* Dimensioni delle icone */
+    width: auto; 
     background: rgb(217, 217, 216);
     padding: 5px 10px;
     border-radius: 20px;
 }
 
 .icon img {
-    width: 30px; /* Dimensione icona */
+    width: 30px; 
     height: auto;
-    margin-right: 10px; /* Spazio tra icona e testo */
+    margin-right: 10px; 
 }
 
 .icon p {
     margin: 0;
     font-size: 16px;
-    color: #333; /* Colore del testo */
+    color: #333; 
 }
+
+
+.container {
+    width: 100vw;
+    background-color: #fff;
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    padding-bottom: 300px;
+}
+  
+ 
+.form {
+    background-color: #f4f4f4;
+    backdrop-filter: blur(20px);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 0 auto;
+    width: 90%; 
+    max-width: 700px;    
+    color: #007dc5;
+}
+
+
+.form p{
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 25px;
+}
+  
+ 
+.form h2 {
+    text-align: center; 
+    font-size: 35px;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+  
+ 
+label {
+    display: block; 
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+  
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border-color: #007dc5;
+    border-radius: 5px;
+    outline-color: #026198;
+}
+  
+button {
+    background-color: #007dc5; 
+    width: 100%;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer;
+    transition: all 0.3s ease; 
+}
+  
+button:hover {
+    background-color: #026198; 
+    transform: translateY(-5px);
+}
+
+footer {
+    background-image: linear-gradient(300deg, rgb(110, 162, 252) 0%, rgb(1, 95, 223) 100%);
+    background-color: #333; /* Colore di sfondo del footer */
+    color: #fff; /* Colore del testo */
+    padding: 20px; /* Padding interno del footer */    
+    text-align: center; /* Allineamento del testo */
+}
+
+.footer-container {
+display: flex;
+flex-direction: column;
+    align-items: center;
+}
+
+.footer-social {
+    margin-bottom: 20px; /* Margine inferiore per separare le sezioni */
+}
+
+.social-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Spaziatura tra i social icons */
+}
+
+.diritti, .developer, .mappa-sito {
+    margin-bottom: 10px; /* Margine inferiore per separare le sezioni */
+}
+
+.mappa-sito{
+    display: flex;
+    gap: 15px;
+}
+
+.mappa-sito a{
+    text-decoration: none;
+    color: white;
+}
+
+
 
 
 @media (max-width: 768px) {
@@ -298,6 +432,7 @@ body {
         opacity: 0;
         transform: translateY(-20px);
         background-color: #ffffff;
+        padding-bottom: 20px;
     }
 
     #menu-toggle:checked ~ .menu-links {
@@ -342,6 +477,10 @@ body {
         height: 25px;
     }
 
+    .chi-sono-content{
+        width: 80%;
+    }
+
     .chi-sono-content .title{
         font-size: 10px;
     }
@@ -359,6 +498,37 @@ body {
         margin: 0;
         font-size: 13px;
         color: #333; /* Colore del testo */
+    }
+
+    .container {
+        width: 100vw;
+        margin: 0 0;
+        padding: 0px;
+        background-color: #fff;
+        display: flex; /* Aggiungi display flex */
+        justify-content: center; /* Centra il contenuto orizzontalmente */
+        align-items: center; /* Centra il contenuto verticalmente */
+    }
+      
+      /* Stile per il form */
+    .form {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        margin: 0 auto; /* Aggiungi margine auto */
+        width: 90%; /* Imposta la larghezza al 90% */
+        max-width: 400px; /* Ombra per dare profondità */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 90%;
     }
 }
 
