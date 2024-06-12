@@ -24,7 +24,7 @@ body {
     border-radius: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    transition: border-radius 1s ease-in-out;
+    transition: border-radius 0.3s ease-in-out;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,21 +54,26 @@ body {
 .menu-links {
     display: flex;
     gap: 15px;
-    opacity: 1;
+    opacity: 1;   
 }
 
 .menu-links a {
     color: var(--azzurro-scuro); 
     text-decoration: none;
     padding: 8px 16px;
-    transition: background 0.3s;
+    transition: background 0.1s;
     font-weight: 600;
     font-size: 20px;
-    transition: color .3s ease-in-out;
+    transition: color .1s ease-in-out;
+    
 }
 
 .menu-links a:hover{
     color: #084c73;
+}
+
+.navbar.menu-open .menu-links {
+    pointer-events: auto; /* Enable interactivity when menu is open */
 }
 
 .contact{
@@ -272,7 +277,7 @@ body {
     align-items: center;
     margin: 10px;
     width: auto; 
-    background: rgb(217, 217, 216);
+    background: rgb(236, 236, 236);
     padding: 5px 10px;
     border-radius: 20px;
 }
@@ -409,6 +414,7 @@ flex-direction: column;
 @media (max-width: 768px) {
     .navbar {
         width: 60%;
+        top: 20px;
     }
 
     .hamburger {
@@ -426,13 +432,14 @@ flex-direction: column;
         text-align: center;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.8s ease-in-out, opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+        transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
         border-bottom-left-radius: 30px;
         border-bottom-right-radius: 30px;
         opacity: 0;
         transform: translateY(-20px);
         background-color: #ffffff;
         padding-bottom: 20px;
+        pointer-events: none;
     }
 
     #menu-toggle:checked ~ .menu-links {
@@ -508,16 +515,17 @@ flex-direction: column;
         display: flex; /* Aggiungi display flex */
         justify-content: center; /* Centra il contenuto orizzontalmente */
         align-items: center; /* Centra il contenuto verticalmente */
+        padding-bottom: 100px;
     }
       
       /* Stile per il form */
     .form {
-        background-color: #fff;
-        padding: 30px;
+        background-color: #ececec;
+        padding: 15px;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         margin: 0 auto; /* Aggiungi margine auto */
-        width: 90%; /* Imposta la larghezza al 90% */
+        width: 80%; /* Imposta la larghezza al 90% */
         max-width: 400px; /* Ombra per dare profondità */
         display: flex;
         flex-direction: column;
@@ -525,10 +533,27 @@ flex-direction: column;
         text-align: center;
     }
 
+    .form-group{
+        text-align: left;        
+    }
+
     input[type="text"],
     input[type="email"],
     textarea {
-        width: 90%;
+        width: 100%;
+    }
+
+    .form p{
+        text-align: center;
+        margin-bottom: 5px;
+        font-size: 20px;
+    }     
+     
+    .form h2 {
+        text-align: center; 
+        font-size: 25px;
+        margin-bottom: 20px;
+        margin-top: 0;
     }
 }
 
